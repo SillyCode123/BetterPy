@@ -31,4 +31,4 @@ def format(build):
         if "}" in curS:
             formated += "\n"
         
-    return formated[0:len(formated)- 6]
+    return formated.strip()

@@ -3,5 +3,5 @@ print("test");print("test");
 test();
 
 fn test(){  
-print("test")
+    print("test");
 }
