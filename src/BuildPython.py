@@ -8,5 +8,7 @@ def build(filecontent):
     filecontent = filecontent.replace("/*", '"""')
     filecontent = filecontent.replace("true", "True")
     filecontent = filecontent.replace("false", "False")
+    filecontent = filecontent.replace("||", "or")
+    filecontent = filecontent.replace("&&", "and")
     
     return filecontent

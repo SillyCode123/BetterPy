@@ -14,16 +14,21 @@ def format(build):
         cur = ""
         
         if "{" in curS:
+            formated += "\n"
             tabs += 1
             cur = curS.replace("{", ":")
         
         elif "}" in curS:
             tabs -= 1
             cur = curS.replace("}", "")
-        
-        elif curS != 0:
+            
+        elif curS:
             cur = curS 
-        
-        formated += curTabs + cur.strip() + "\n"
     
-    return formated[0:len(formated) - 6]
+        if curS:
+            formated += curTabs + cur.strip() + "\n"    
+
+        if "}" in curS:
+            formated += "\n"
+        
+    return formated[0:len(formated)- 6]
