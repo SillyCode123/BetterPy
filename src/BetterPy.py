@@ -10,7 +10,7 @@ filename = ""
 if len(sys.argv) > 1:
     filename = sys.argv[1]
 else: 
-    filename = input("filename>")
+    filename = input("path + filename>")
     
 read = FileReader.read(filename)
  
@@ -21,6 +21,6 @@ if read != False:
         formated = Formatter.format(build)
         
         if formated != False:
-            FileWriter.write(formated)            
+            FileWriter.write(formated, filename)            
     
     

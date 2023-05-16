@@ -5,4 +5,6 @@ def read(filename):
         print("Non Legit File")
         return False
     
+    return open(filename).read()
+    
             
