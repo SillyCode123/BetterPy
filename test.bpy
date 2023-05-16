@@ -1,8 +1,7 @@
-
 print("test");print("test");
 
 test();
 
-fn test(){
+fn test(){  
 print("test")
 }
