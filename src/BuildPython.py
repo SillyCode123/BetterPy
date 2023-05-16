@@ -8,7 +8,7 @@ def build(filecontent):
         filecontent = filecontent.replace(fn, "")
         if "fn" not in filecontent:
             t = False
-        filecontent = fn + filecontent
+        filecontent = fn + "\n" + filecontent
         
     print(filecontent)    
     filecontent = filecontent.replace(";", "\n")

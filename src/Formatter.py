@@ -28,7 +28,5 @@ def format(build):
         if curS:
             formated += curTabs + cur.strip() + "\n"    
 
-        if "}" in curS:
-            formated += "\n"
         
     return formated.strip()
