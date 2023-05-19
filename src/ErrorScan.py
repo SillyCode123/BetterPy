@@ -28,23 +28,24 @@ def scan(read):
             openingBracket += 1
                 
             if("fn" not in line and "if" not in line ):
-                throwError("Need fn to declare a function or an if statement", i)
+                throwError("Need fn to declare a function or an if statement", i)     
             
             if("(" not in line and ")" not in line):
-                throwError("Missing parameters", i)
-                
-            elif("(" not in line):
-                throwError("Missing opening bracket", i)
-            
-            elif(")" not in line):
-                throwError("Missing closing bracket", i)    
+                throwError("Missing parameters", i)          
             
         if ("}" in line):
             closingBrackets += 1
             if openingBracket == 0:
                throwError("Missing opening curly bracket", i)
+               
+         
+      
                   
-        i += 1
+        if("(" not in line and ")" in line):
+                throwError("Missing opening bracket", i)
+            
+        if(")" not in line and "(" in line):
+            throwError("Missing closing bracket", i) 
         
         if(line.count('"') % 2 != 0):
             throwError('Missing an quote(like this => ")', i)
@@ -52,7 +53,8 @@ def scan(read):
         if(line.count("'") % 2 != 0):
             throwError("Missing an quote(like this => ') ", i)
             
-    
+        # count up    
+        i += 1    
         
     if(openingBracket > closingBrackets):
         throwError("Missing closing curly bracket", i)  
