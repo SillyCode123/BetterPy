@@ -1,0 +1,3 @@
+fn great(){
+    print("Hello Rudy");
+}

@@ -20,5 +20,12 @@ py src/BetterPy.py "J:\Coding\Projekts\Desktop\Python\BetterPy\test\3\Main.bpy"
 echo }
 echo:
 
+:: Test3
+echo Test 4 {
+py src/BetterPy.py "J:\Coding\Projekts\Desktop\Python\BetterPy\test\4\Main.bpy"
+py test/4/Main.py
+echo }
+echo:
+
 ::close
 pause

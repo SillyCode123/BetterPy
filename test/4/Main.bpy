@@ -1,0 +1,6 @@
+import "Rudy.bpy" //files in your folder
+import math      // pip libs 
+
+fn main(){
+    Rudy.great();
+}

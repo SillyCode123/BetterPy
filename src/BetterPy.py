@@ -4,6 +4,7 @@ import BuildPython
 import Formatter
 import ErrorScan
 import FileWriter
+import Importer
 
 #Input path + filename 
 filename = ""
@@ -17,6 +18,7 @@ read = FileReader.read(filename)
 if read != False:
     #Scan the file for erros
     scanned = ErrorScan.start(read, filename)
+    Importer.check(read,filename)
     
     if scanned:
         # Build Python
@@ -29,7 +31,7 @@ if read != False:
             if formated != False:
                 # Write it
                 FileWriter.write(formated, filename)
-                print('\x1b[6;30;42m' + 'Compiler Succesful!' + '\x1b[0m')
+                print('\x1b[6;30;42m' + 'Compiled ' + filename[filename.rfind("\\") + 1:len(filename)] +  ' Succesful!' + '\x1b[0m')
                             
     
     
