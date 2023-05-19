@@ -1,10 +1,11 @@
 import os.path as file
 
 def read(filename):
-    if file.isfile(filename) != True:
+    if not file.isfile(filename):
         print("Non Legit File")
         return False
     
-    return open(filename).read()
+    with open(filename) as f:
+        return f.read()
     
             
