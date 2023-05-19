@@ -23,7 +23,7 @@ def compile(filename):
                 if formated != False:
                     # Write it
                     FileWriter.write(formated, filename)
-                    print('\x1b[6;30;42m' + 'Compiled ' + filename +  'Succesful!' + '\x1b[0m')
+                    print('\x1b[6;30;42m' + 'Compiled ' + filename +  ' Succesful!' + '\x1b[0m')
                             
     
     
@@ -34,8 +34,8 @@ def check(read, filename):
         for i in readLines:
             if("import" in i and '"' in i):
                 im = i[i.find('"')+1:i.rfind('"')]
-                read = read.replace(i,"import " + im[0:im.rfind(".")])
-                print(read.replace(i,"import " + im ))
+                read = read.replace(i,"")
+                read = "import " + im[0:im.rfind(".")] + "\n" + read
                 compile(filename[0:filename.rfind("\\") + 1] + "" + im)
                             
     return read

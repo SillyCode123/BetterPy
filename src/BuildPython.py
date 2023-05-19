@@ -5,6 +5,17 @@ def build(filecontent):
     filecontent = filecontent.replace(fns, "")
     filecontent = fns + "" + filecontent
     
+    filecontents = filecontent.splitlines()
+    for i in filecontents:
+        if("import" in i):
+            filecontent = filecontent.replace(i,"")
+            filecontent = i[i.find("import"):len(i)] + "\n" + filecontent
+    
+    print(filecontent)
+    
+    # import to the top
+    filecontent = filecontent
+    
     # Replace semicolons with newlines    
     filecontent = filecontent.replace(";", "\n")
     
@@ -32,7 +43,7 @@ def build(filecontent):
     
     # If main make filecontent different
     if "main" in filecontent:
-        filecontent += '\rif __name__ == "__main__"{ \n    main()'
+        filecontent += '\rif __name__ == "__main__"{ \n    main()}'
     
     # Convert /* ... */ comments to # comments
     if "/*" in filecontent and "*/" in filecontent:
