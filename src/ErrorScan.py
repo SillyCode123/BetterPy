@@ -16,7 +16,7 @@ def start(read, filename):
 def throwError(error, line):
     global erros
     erros += 1
-    print('\x1b[0;30;41m' + 'Error:\x1b[0m in "' + file + '":' + str(line)+ " " + error ) 
+    print('\x1b[0;30;41m' + 'Error:\x1b[0m in "' + file + '":' + str(line)+ " " + error.strip() + ".") 
 
 def scan(read):
     readLines = read.splitlines()
@@ -28,7 +28,7 @@ def scan(read):
             openingBracket += 1
                 
             if("fn" not in line and "if" not in line ):
-                throwError("Need fn to declare a function or if ", i)
+                throwError("Need fn to declare a function or an if statement", i)
             
             if("(" not in line and ")" not in line):
                 throwError("Missing parameters", i)
@@ -45,6 +45,13 @@ def scan(read):
                throwError("Missing opening curly bracket", i)
                   
         i += 1
+        
+        if(line.count('"') % 2 != 0):
+            throwError('Missing an quote(like this => ")', i)
+            
+        if(line.count("'") % 2 != 0):
+            throwError("Missing an quote(like this => ') ", i)
+            
     
         
     if(openingBracket > closingBrackets):
