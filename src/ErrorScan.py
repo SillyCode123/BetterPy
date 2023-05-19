@@ -11,7 +11,7 @@ def start(read, filename):
     if erros == 0:
         return True
     else:
-        print("\x1b[0;30;41m"+ str(erros) + ' Erros\x1b[0m in "' + file + '"')
+        print("\x1b[0;30;41m"+ str(erros) + " Erros\x1b[0m " + 'in "' + file + '"')
         return False
 
 def throwError(error, line):
