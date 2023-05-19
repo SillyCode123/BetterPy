@@ -1,16 +1,10 @@
 #build ist ein string
 def build(filecontent):
-    t = True
-     
-    while t:
-        print("t")
-        fn = filecontent[filecontent.find("fn"):filecontent.find("}") + 1]
-        filecontent = filecontent.replace(fn, "")
-        if "fn" not in filecontent:
-            t = False
-        filecontent = fn + "\n" + filecontent
+   
+    fns = filecontent[filecontent.find("fn"): filecontent.rfind("}") + 1]
+    filecontent = filecontent.replace(fns, "")
+    filecontent = fns + "" + filecontent
         
-    print(filecontent)    
     filecontent = filecontent.replace(";", "\n")
     filecontent = filecontent.replace("read", "input")
     filecontent = filecontent.replace("fn", "def")
@@ -21,5 +15,8 @@ def build(filecontent):
     filecontent = filecontent.replace("false", "False")
     filecontent = filecontent.replace("||", "or")
     filecontent = filecontent.replace("&&", "and")    
+    
+    if "main" in filecontent:
+        filecontent += '\rif __name__ == "__main__"{ \n    main()'
         
     return filecontent

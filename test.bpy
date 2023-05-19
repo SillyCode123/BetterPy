@@ -1,7 +1,18 @@
+
 print("test");print("test");
 
 test();
 
-fn test(){  
-    print("test");
+if(true && true){
+    cool()
 }
+
+fn test(){  
+print("test");
+}
+
+fn cool() {
+    print("cool");
+}
+
+

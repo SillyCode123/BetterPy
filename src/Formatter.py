@@ -1,6 +1,4 @@
-# build wird zum line array
 def format(build):
-    # das klamer zeugs
     buildLines = build.splitlines()
     
     tabs =0
@@ -8,6 +6,7 @@ def format(build):
     formated = ""
     for curS in buildLines:
         curTabs = ""
+        
         for _ in range(0, tabs):
             curTabs += "    "
             
@@ -27,6 +26,5 @@ def format(build):
     
         if curS:
             formated += curTabs + cur.strip() + "\n"    
-
-        
+ 
     return formated.strip()
