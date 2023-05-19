@@ -1,6 +1,6 @@
 def main():
     Rudy.great()
-    import "Rudy.bpy" #files in your folder
+    import Rudy
 import math      # pip libs
 if __name__ == "__main__":
     main()

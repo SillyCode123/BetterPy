@@ -34,7 +34,8 @@ def check(read, filename):
         for i in readLines:
             if("import" in i and '"' in i):
                 im = i[i.find('"')+1:i.rfind('"')]
-                read = read.replace(i,"import " + im )
-                compile(filename[0:filename.rfind("\\")] + im)
+                read = read.replace(i,"import " + im[0:im.rfind(".")])
+                print(read.replace(i,"import " + im ))
+                compile(filename[0:filename.rfind("\\") + 1] + "" + im)
                             
     return read

@@ -18,7 +18,7 @@ read = FileReader.read(filename)
 if read != False:
     #Scan the file for erros
     scanned = ErrorScan.start(read, filename)
-    Importer.check(read,filename)
+    read = Importer.check(read,filename)
     
     if scanned:
         # Build Python
