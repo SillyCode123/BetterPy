@@ -17,7 +17,6 @@ echo:
 :: Test3
 echo Test3 {
 py src/BetterPy.py "J:\Coding\Projekts\Desktop\Python\BetterPy\test\3\Main.bpy"
-py test/3/Main.py
 echo }
 echo:
 
