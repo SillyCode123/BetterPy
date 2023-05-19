@@ -13,7 +13,6 @@ def format(build):
         cur = ""
         
         if "{" in curS:
-            formated += "\n"
             tabs += 1
             cur = curS.replace("{", ":")
         

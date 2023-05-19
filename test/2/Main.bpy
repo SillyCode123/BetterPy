@@ -1,0 +1,14 @@
+fn main(){
+    // this is a one line comment
+    /* 
+    hello iam a multi 
+    line comment
+    */
+    print("main")
+    test()
+}
+
+//test
+fn test(){
+    print("test")
+}
