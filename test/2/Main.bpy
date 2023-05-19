@@ -4,11 +4,11 @@ fn main(){
     hello iam a multi 
     line comment
     */
-    print("main")
-    test()
+    print("main");
+    test();
 }
 
 //test
 fn test(){
-    print("test")
+    print("test");
 }

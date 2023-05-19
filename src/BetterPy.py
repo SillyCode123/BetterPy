@@ -16,9 +16,9 @@ else:
 read = FileReader.read(filename)
 if read != False:
     #Scan the file for erros
-    scanned = ErrorScan.scan(read)
+    scanned = ErrorScan.start(read, filename)
     
-    if scanned == True:
+    if scanned:
         # Build Python
         build = BuildPython.build(read)
 
@@ -28,6 +28,8 @@ if read != False:
         
             if formated != False:
                 # Write it
-                FileWriter.write(formated, filename)            
+                FileWriter.write(formated, filename)
+                print('\x1b[6;30;42m' + 'Compiler Succesful!' + '\x1b[0m')
+                            
     
     
