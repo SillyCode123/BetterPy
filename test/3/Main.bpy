@@ -1,5 +1,8 @@
 main (){
     print("test);
+    if true{
+        print(test)
+    }
     test()
 }
 
