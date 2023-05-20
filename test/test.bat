@@ -1,5 +1,5 @@
 @echo off
-
+cd ../
 :: Test1
 echo Test 1 {
 py src/BetterPy.py "J:\Coding\Projekts\Desktop\Python\BetterPy\test\1\Main.bpy" 

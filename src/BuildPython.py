@@ -10,9 +10,7 @@ def build(filecontent):
         if("import" in i):
             filecontent = filecontent.replace(i,"")
             filecontent = i[i.find("import"):len(i)] + "\n" + filecontent
-    
-    print(filecontent)
-    
+                
     # import to the top
     filecontent = filecontent
     
@@ -39,11 +37,6 @@ def build(filecontent):
     
     # Replace "&&" with "and"
     filecontent = filecontent.replace("&&", "and")    
-    
-    
-    # If main make filecontent different
-    if "main" in filecontent:
-        filecontent += '\rif __name__ == "__main__"{ \n    main()}'
     
     # Convert /* ... */ comments to # comments
     if "/*" in filecontent and "*/" in filecontent:

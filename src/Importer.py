@@ -23,7 +23,7 @@ def compile(filename):
                 if formated != False:
                     # Write it
                     FileWriter.write(formated, filename)
-                    print('\x1b[6;30;42m' + 'Compiled ' + filename +  ' Succesful!' + '\x1b[0m')
+                    print('Compiled ' + filename +  ' Succesful!')
                             
     
     

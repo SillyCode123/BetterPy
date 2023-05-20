@@ -34,4 +34,9 @@ def format(build):
             # Add the formatted line with the right indentation to get the final result
             formated += curTabs + cur.strip() + "\n"    
  
+    
+    # If main make filecontent different
+    if "main" in formated:
+        formated += '\nif __name__ == "__main__": \n    main()'
+ 
     return formated.strip()

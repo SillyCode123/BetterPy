@@ -31,7 +31,7 @@ if read != False:
             if formated != False:
                 # Write it
                 FileWriter.write(formated, filename)
-                print('\x1b[6;30;42m' + 'Compiled ' + filename[filename.rfind("\\") + 1:len(filename)] +  ' Succesful!' + '\x1b[0m')
+                print('Compiled ' + filename[filename.rfind("\\") + 1:len(filename)] +  ' Succesful!')
                             
     
     
