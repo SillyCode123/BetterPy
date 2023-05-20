@@ -1,1 +1,2 @@
-cmd /c start "test" cmd.exe /C C:\Users\gehri\Documents\Coding\Python\BetterPy\start.bat
+cd test
+cmd /C start "test" cmd.exe /C test.bat
