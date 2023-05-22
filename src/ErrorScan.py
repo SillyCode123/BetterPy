@@ -1,5 +1,5 @@
-erros = 0
-file = ""
+erros = 0   # Counter for errors
+file = ""   # Filename variable
 
 def start(read, filename):
     global erros
@@ -12,6 +12,8 @@ def start(read, filename):
         return True
     else:
         print(str(erros) + " Erros" + 'in "' + file + '"')
+        # Print the number of errors and the filename in red
+        print("\x1b[0;30;41m"+ str(erros) + " Erros\x1b[0m " + 'in "' + file + '"')
         return False
 
 def throwError(error, line):
@@ -63,6 +65,3 @@ def scan(read):
     if(openingBracket < closingBrackets):
         throwError("Missing opening curly bracket", i)     
         
-    
-  
-    
