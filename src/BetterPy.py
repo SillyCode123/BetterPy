@@ -32,6 +32,4 @@ if read != False:
                 # Write it
                 FileWriter.write(formated, filename)
                 print('Compiled ' + filename[filename.rfind("\\") + 1:len(filename)] +  ' Succesful!')
-                            
-    
-    
+                              
