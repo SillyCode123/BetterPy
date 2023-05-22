@@ -1,54 +1,51 @@
-#build ist ein string
 def build(filecontent):
     # Extract function definitions
     fns = filecontent[filecontent.find("fn"): filecontent.rfind("}") + 1]
     filecontent = filecontent.replace(fns, "")
     filecontent = fns + "" + filecontent
-    
+
     filecontents = filecontent.splitlines()
-    for i in filecontents:
-        if("import" in i):
-            filecontent = filecontent.replace(i,"")
-            filecontent = i[i.find("import"):len(i)] + "\n" + filecontent
-                
-    # import to the top
-    filecontent = filecontent
-    
-    # Replace semicolons with newlines    
+
+    # Import
+    imports = []
+    new_filecontent = []
+    for line in filecontents:
+        if "import" in line:
+            imports.append(line)
+        else:
+            new_filecontent.append(line)
+
+    filecontent = "\n".join(imports) + "\n" + "\n".join(new_filecontent)
+
+    # Replace semicolons with newlines
     filecontent = filecontent.replace(";", "\n")
-    
+
     # Replace "read" with "input"
     filecontent = filecontent.replace("read", "input")
-    
+
     # Replace "fn" with "def"
     filecontent = filecontent.replace("fn", "def")
-    
+
     # Replace "//" with "#"
     filecontent = filecontent.replace("//", "#")
-    
-    # Replace "true" with "True" cause py sucks
+
+    # Replace "true" with "True"
     filecontent = filecontent.replace("true", "True")
     
      # Replace "false" with "False"
     filecontent = filecontent.replace("false", "False")
-    
+
     # Replace "||" with "or"
     filecontent = filecontent.replace("||", "or")
-    
+
     # Replace "&&" with "and"
-    filecontent = filecontent.replace("&&", "and")    
-    
+    filecontent = filecontent.replace("&&", "and")
+
     # Convert /* ... */ comments to # comments
-    if "/*" in filecontent and "*/" in filecontent:
-        comment = filecontent[filecontent.find("/*"): filecontent.find("*/") + 2]
-        commentLines = comment.splitlines(True)
-        del commentLines[-1]
-        recomment = ""
-        for i in commentLines:
-            recomment += "#" + i.replace("/*", "")
-        
-        filecontent = filecontent.replace(comment, recomment.replace("*/", ""))
-    
-    
-        
+    while "/*" in filecontent and "*/" in filecontent:
+        start = filecontent.find("/*")
+        end = filecontent.find("*/") + 2
+        comment = filecontent[start:end]
+        filecontent = filecontent.replace(comment, comment.replace("/*", "#").replace("*/", ""))
+
     return filecontent

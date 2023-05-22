@@ -1,12 +1,7 @@
-import os.path as file
+import os
 
 def write(content, filename):
-    # Check if file python already exists
-    if file.exists(filename.split(".")[0] + ".py"):
-        # Overwrite it's content
-         open(filename.split(".")[0] + ".py", "w").write(content)
-    else :
-        # Create new python file
-        open(filename.split(".")[0] + ".py" , "x").write(content)
-
+    file_path = os.path.splitext(filename)[0] + ".py"
     
+    with open(file_path, "w") as file:
+        file.write(content)
