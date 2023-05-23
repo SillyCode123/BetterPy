@@ -43,7 +43,7 @@ def scan(read):
                
         if("import" in line and '"' in line):
             if(not path.isfile(file[0:file.rfind("\\") +1] + line[line.find('"') + 1:line.rfind('"')])):
-                throwError("Not find import " + line[line.find('"') + 1:line.rfind('"')], i)
+                throwError('Not find import "' + line[line.find('"') + 1:line.rfind('"')] + '"', i)
                   
         if("(" not in line and ")" in line):
                 throwError("Missing opening bracket", i)
