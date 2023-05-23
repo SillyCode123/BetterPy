@@ -1,3 +1,4 @@
+import "test.bpy"
 main (){
     print("test);
     if true{

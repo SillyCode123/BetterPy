@@ -1,3 +1,4 @@
+import os.path as path
 erros = 0   # Counter for errors
 file = ""   # Filename variable
 
@@ -40,8 +41,9 @@ def scan(read):
             if openingBracket == 0:
                throwError("Missing opening curly bracket", i)
                
-         
-      
+        if("import" in line and '"' in line):
+            if(not path.isfile(file[0:file.rfind("\\") +1] + line[line.find('"') + 1:line.rfind('"')])):
+                throwError("Not find import " + line[line.find('"') + 1:line.rfind('"')], i)
                   
         if("(" not in line and ")" in line):
                 throwError("Missing opening bracket", i)
