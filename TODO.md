@@ -3,4 +3,4 @@
 - ~~Error Scanner~~
 - ~~Multiblefile Compiling per Import Statments~~
 - Types like String
-- Better Commenting
+- ~~Better Commenting~~

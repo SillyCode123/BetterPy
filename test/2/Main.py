@@ -1,9 +1,8 @@
 def main():
     # this is a one line comment
     #
-    hello iam a multi
-    line comment
-    
+    #    hello iam a multi
+    #    line comment
     print("main")
     test()
     

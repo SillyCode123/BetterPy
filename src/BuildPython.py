@@ -6,16 +6,12 @@ def build(filecontent):
 
     filecontents = filecontent.splitlines()
 
-    # Import
-    imports = []
-    new_filecontent = []
-    for line in filecontents:
-        if "import" in line:
-            imports.append(line)
-        else:
-            new_filecontent.append(line)
-
-    filecontent = "\n".join(imports) + "\n" + "\n".join(new_filecontent)
+    # Imports
+    filecontents = filecontent.splitlines()
+    for i in filecontents:
+        if("import" in i):
+            filecontent = filecontent.replace(i,"")
+            filecontent = i[i.find("import"):len(i)] + "\n" + filecontent
 
     # Replace semicolons with newlines
     filecontent = filecontent.replace(";", "\n")
@@ -42,10 +38,15 @@ def build(filecontent):
     filecontent = filecontent.replace("&&", "and")
 
     # Convert /* ... */ comments to # comments
-    while "/*" in filecontent and "*/" in filecontent:
-        start = filecontent.find("/*")
-        end = filecontent.find("*/") + 2
-        comment = filecontent[start:end]
-        filecontent = filecontent.replace(comment, comment.replace("/*", "#").replace("*/", ""))
+    if "/*" in filecontent and "*/" in filecontent:
+        comment = filecontent[filecontent.find("/*"): filecontent.find("*/") + 2]
+        commentLines = comment.splitlines(True)
+        del commentLines[-1]
+        recomment = ""
+        for i in commentLines:
+            recomment += "#" + i.replace("/*", "")
+
+        filecontent = filecontent.replace(comment, recomment.replace("*/", ""))
+
 
     return filecontent

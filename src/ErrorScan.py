@@ -11,7 +11,6 @@ def start(read, filename):
     if erros == 0:
         return True
     else:
-        print(str(erros) + " Erros" + 'in "' + file + '"')
         # Print the number of errors and the filename in red
         print("\x1b[0;30;41m"+ str(erros) + " Erros\x1b[0m " + 'in "' + file + '"')
         return False
@@ -19,8 +18,8 @@ def start(read, filename):
 def throwError(error, line):
     global erros
     erros += 1
-    print('Error: in "' + file + ':' + str(line)+ '" ' + error.strip() + ".") 
-
+    print('\x1b[0;30;41m' + 'Error:\x1b[0m in "' + file + ':' + str(line)+ '" ' + error.strip() + ".") 
+    
 def scan(read):
     readLines = read.splitlines()
     i = 1
