@@ -29,5 +29,12 @@ py test/4/pyOut/Main.py
 echo }
 echo:
 
+:: Test5
+echo Test 5{
+py src/BetterPy.py "%location %\BetterPy\test\5\Main.bpy"
+py test/5/pyOut/Main.py
+echo }
+echo:
+
 ::close
 pause

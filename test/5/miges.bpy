@@ -1,0 +1,3 @@
+fn getName(){
+    return "Miges"
+}

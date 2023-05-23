@@ -10,8 +10,7 @@ def compile(filename):
     if read != False:
         #Scan the file for erros
         scanned = ErrorScan.start(read, filename)
-        check(read,filename)
-        
+        read = check(read,filename)
         if scanned:
             # Build Python
             build = BuildPython.build(read)
@@ -33,9 +32,9 @@ def check(read, filename):
         readLines = read.splitlines()
         for i in readLines:
             if("import" in i and '"' in i):
-                im = i[i.find('"')+1:i.rfind('"')]
+                im = i[i.find('"')+1:len(i)].replace('"', "")
                 read = read.replace(i,"")
-                read = "import " + im[0:im.rfind(".")] + "\n" + read
-                compile(filename[0:filename.rfind("\\") + 1] + "" + im)
+                read = "import " + im[0:im.rfind(".")] + im[im.rfind(".") + 4: len(im)] + "\n" + read
+                compile(filename[0:filename.rfind("\\") + 1] + "" + i[i.find('"') +1:i.rfind('"')])
                             
     return read

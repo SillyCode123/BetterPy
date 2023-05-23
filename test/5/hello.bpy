@@ -1,0 +1,5 @@
+import "miges.bpy"
+
+fn greet(){
+    print("Hello " + miges.getName());
+}
