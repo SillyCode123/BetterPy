@@ -1,12 +1,7 @@
-import "test.bpy"
-main (){
-    print("test);
-    if true{
-        print(test)
-    }
-    test()
-}
+import "Rudy.bpy" //files in your folder
+import math      // pip libs 
 
-test()
-    print("test"
+fn main(){
+    Rudy.great();
+    print(math.floor(5))
 }

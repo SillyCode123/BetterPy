@@ -1,5 +1,0 @@
-import "hello.bpy" as h
-
-fn main(){
-    h.greet();    
-}

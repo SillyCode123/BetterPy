@@ -1,7 +1,5 @@
-import "Rudy.bpy" //files in your folder
-import math      // pip libs 
+import "hello.bpy" as h
 
 fn main(){
-    Rudy.great();
-    print(math.floor(5))
+    h.greet();    
 }

@@ -1,0 +1,12 @@
+import "test.bpy"
+main (){
+    print("test);
+    if true{
+        print(test)
+    }
+    test()
+}
+
+test()
+    print("test"
+}

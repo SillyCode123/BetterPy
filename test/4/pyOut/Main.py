@@ -1,8 +1,7 @@
-import math      # pip libs
-import Rudy #files in your folder
+import hello as h
 def main():
-    Rudy.great()
-    print(math.floor(5))
+    h.greet()
+    
 
 if __name__ == "__main__": 
     main()
