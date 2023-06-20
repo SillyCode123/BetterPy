@@ -3,3 +3,4 @@ BetterPy is a version of Python with some adjustments that can make it better fo
 
 ## Setup
 - Download the newest [release](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- 
