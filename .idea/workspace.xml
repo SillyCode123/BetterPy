@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78853940-d10b-4ac3-9900-e30e752070c3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BuildPython.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuildPython.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.bat" beforeDir="false" afterPath="$PROJECT_DIR$/start.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/1/pyOut/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/1/pyOut/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.bat" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,17 +35,18 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "test",
     "last_opened_file_path": "J:/Coding/Projekts/Desktop/Python/BetterPy/start.bat",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.BetterPy">
+  <component name="RunManager" selected="Shell Script.Test">
     <list>
       <item itemvalue="Python.BetterPy" />
       <item itemvalue="Shell Script.Test" />
@@ -56,11 +61,14 @@
       <option name="presentableId" value="Default" />
       <updated>1687884790923</updated>
       <workItem from="1687884792682" duration="687000" />
-      <workItem from="1687885496119" duration="87000" />
+      <workItem from="1687885496119" duration="902000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.bat" />
   </component>
 </project>

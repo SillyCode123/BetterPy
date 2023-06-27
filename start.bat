@@ -1,3 +1,3 @@
 @echo off
 cd test
-cmd /C start "test" cmd.exe /C test.bat
+wt -F test.bat

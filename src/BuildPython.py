@@ -6,7 +6,7 @@ def build(filecontent):
 
     filecontents = filecontent.splitlines()
 
-    # Imports
+    # Impor
     filecontents = filecontent.splitlines()
     for i in filecontents:
         if("import" in i):
@@ -38,9 +38,9 @@ def build(filecontent):
     filecontent = filecontent.replace("&&", "and")
     
     # Replace "int" with "nothing"
-    filecontent = filecontent.replace("int", "")
+    filecontent = filecontent.replace("int ", "")
     
-    filecontent = filecontent.replace("String", " ")
+    filecontent = filecontent.replace("String ", " ")
 
     # Convert /* ... */ comments to # comments
     if "/*" in filecontent and "*/" in filecontent:
