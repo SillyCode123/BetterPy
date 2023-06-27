@@ -36,6 +36,11 @@ def build(filecontent):
 
     # Replace "&&" with "and"
     filecontent = filecontent.replace("&&", "and")
+    
+    # Replace "int" with "nothing"
+    filecontent = filecontent.replace("int", "")
+    
+    filecontent = filecontent.replace("String", " ")
 
     # Convert /* ... */ comments to # comments
     if "/*" in filecontent and "*/" in filecontent:
