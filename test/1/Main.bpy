@@ -13,7 +13,15 @@ print("test");
 fn cool() {
     print("cool");
 }
+String i = "Strings gehen jetzt";
+int x = 1;
+Boolean c = true;
 
+<<<<<<< Updated upstream
 String i = 1
+=======
+print(i)
+print(q)
+>>>>>>> Stashed changes
 
 print(i)

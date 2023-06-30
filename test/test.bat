@@ -5,7 +5,7 @@ set location =E:\Coding\Desktop\Python\BetterPy
 
 :: Test1
 echo Test 1 {
-py src/BetterPy.py "%location %\test\1\Main.bpy"
+py src/BetterPy.py "E:\Coding\test\BetterPy\test\1\Main.bpy"
 py test/1/pyOut/Main.py    
 echo }
 echo:
