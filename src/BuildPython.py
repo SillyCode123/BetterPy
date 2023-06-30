@@ -1,3 +1,5 @@
+from ErrorScan import throwError
+
 def build(filecontent):
     # Extract function definitions
     fns = filecontent[filecontent.find("fn"): filecontent.rfind("}") + 1]
@@ -6,7 +8,7 @@ def build(filecontent):
 
     filecontents = filecontent.splitlines()
 
-    # Impor
+    # Imports
     filecontents = filecontent.splitlines()
     for i in filecontents:
         if("import" in i):
@@ -28,7 +30,7 @@ def build(filecontent):
     # Replace "true" with "True"
     filecontent = filecontent.replace("true", "True")
     
-     # Replace "false" with "False"
+    # Replace "false" with "False"
     filecontent = filecontent.replace("false", "False")
 
     # Replace "||" with "or"
@@ -37,10 +39,7 @@ def build(filecontent):
     # Replace "&&" with "and"
     filecontent = filecontent.replace("&&", "and")
     
-    # Replace "int" with "nothing"
-    filecontent = filecontent.replace("int ", "")
-    
-    filecontent = filecontent.replace("String ", " ")
+    filecontent = filecontent.replace("String", "TEST")
 
     # Convert /* ... */ comments to # comments
     if "/*" in filecontent and "*/" in filecontent:
@@ -53,5 +52,28 @@ def build(filecontent):
 
         filecontent = filecontent.replace(comment, recomment.replace("*/", ""))
 
+    # Process each line
+    processed_lines = []
+    for line in filecontents:
+        processed_line = processStringDeclaration(line)
+        if processed_line is not None:
+            processed_lines.append(processed_line)
+        else:
+            processed_lines.append(line)
+
+    # Join the lines back into a single string
+    filecontent = "\n".join(processed_lines)
 
     return filecontent
+
+def processStringDeclaration(line):
+    line = line.strip()
+    if line.startswith("String"):
+        parts = line.split("=")
+        if len(parts) != 2:
+            throwError("Invalid string declaration")
+            return None
+        varName = parts[0].strip().split(" ")[1]
+        value = parts[1].strip()
+        return f'{varName} = "{value}"'
+    return line

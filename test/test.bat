@@ -1,7 +1,7 @@
 @echo off
 cd ..
 ::change here to yout path (only to where your folder)
-set location =J:\Coding\Projekts\Desktop\Python\BetterPy
+set location =E:\Coding\Desktop\Python\BetterPy
 
 :: Test1
 echo Test 1 {

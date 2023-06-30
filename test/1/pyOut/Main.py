@@ -9,5 +9,3 @@ test()
 if(True and True):
     cool()
     
-i = 1
-print(i)
