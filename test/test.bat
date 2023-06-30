@@ -1,8 +1,8 @@
 @echo off
 cd ..
 ::change here to yout path (only to where your folder)
-set location =E:\Coding\Desktop\Python\BetterPy
-
+set location = D:\Coding\Desktop\Python\BetterPy
+cd %location%
 :: Test1
 echo Test 1 {
 py src/BetterPy.py "%location %\test\1\Main.bpy"
