@@ -1,3 +1,1 @@
-fn getName(){
-    return "Miges"
-}
+String i = "test";
