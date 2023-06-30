@@ -4,3 +4,4 @@ BetterPy is a version of Python with some adjustments that can make it better fo
 ## Setup
 - Download the newest [release](https://sillycode.tech/software?Desktop:BetterPy)
 
+![img.png](BetterPy.png)
