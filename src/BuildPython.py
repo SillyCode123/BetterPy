@@ -39,10 +39,6 @@ def build(filecontent):
     filecontent = filecontent.replace("int ", "")
     
     filecontent = filecontent.replace("String ", " ")
-<<<<<<< HEAD
->>>>>>> parent of 5bb1a76 (Should work)
-=======
->>>>>>> parent of 5bb1a76 (Should work)
 
     # Convert /* ... */ comments to # comments
     if "/*" in filecontent and "*/" in filecontent:
@@ -55,51 +51,5 @@ def build(filecontent):
 
         filecontent = filecontent.replace(comment, recomment.replace("*/", ""))
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    # Join the lines back into a single string
-    filecontent = "\n".join(processed_lines)
 
     return filecontent
-
-def process_string_integer(filecontent):
-    lines = filecontent.splitlines()
-    processed_lines = []
-    for line in lines:
-        line = line.strip()
-        if line.startswith("String"):
-            parts = line.split("=")
-            if len(parts) != 2:
-                throwError("Invalid string declaration")
-                continue
-            var_name = parts[0].strip().split(" ")[1]
-            value = parts[1].strip().strip(";").strip('"')
-            processed_lines.append(f'{var_name} = "{value}"')
-        elif line.startswith("int"):
-            parts = line.split("=")
-            if len(parts) != 2:
-                throwError("Invalid integer declaration")
-                continue
-            var_name = parts[0].strip().split(" ")[1]
-            value = parts[1].strip().rstrip(";")
-            processed_lines.append(f'{var_name} = int({value})')
-        elif line.startswith("Boolean"):
-            parts = line.split("=")
-            if len(parts) != 2:
-                throwError("Invalid boolean declaration")
-                continue
-            var_name = parts[0].strip().split(" ")[1]
-            value = parts[1].strip().rstrip(";")
-            processed_lines.append(f'{var_name} = bool({value})')
-        else:
-            processed_lines.append(line)
-
-    return "\n".join(processed_lines)
-=======
-
-    return filecontent
->>>>>>> parent of 5bb1a76 (Should work)
-=======
-
-    return filecontent
->>>>>>> parent of 5bb1a76 (Should work)
