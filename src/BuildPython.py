@@ -39,6 +39,9 @@ def build(filecontent):
     filecontent = filecontent.replace("int ", "")
     
     filecontent = filecontent.replace("String ", " ")
+<<<<<<< HEAD
+>>>>>>> parent of 5bb1a76 (Should work)
+=======
 >>>>>>> parent of 5bb1a76 (Should work)
 
     # Convert /* ... */ comments to # comments
@@ -52,6 +55,7 @@ def build(filecontent):
 
         filecontent = filecontent.replace(comment, recomment.replace("*/", ""))
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     # Join the lines back into a single string
     filecontent = "\n".join(processed_lines)
@@ -91,6 +95,10 @@ def process_string_integer(filecontent):
             processed_lines.append(line)
 
     return "\n".join(processed_lines)
+=======
+
+    return filecontent
+>>>>>>> parent of 5bb1a76 (Should work)
 =======
 
     return filecontent

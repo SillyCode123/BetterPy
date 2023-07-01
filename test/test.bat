@@ -2,9 +2,12 @@
 cd ..
 ::change here to yout path (only to where your folder)
 <<<<<<< HEAD
+<<<<<<< HEAD
 set location = D:\Coding\Desktop\Python\BetterPy
 cd %location%
 =======
+=======
+>>>>>>> parent of 5bb1a76 (Should work)
 set location =J:\Coding\Projekts\Desktop\Python\BetterPy
 
 >>>>>>> parent of 5bb1a76 (Should work)
