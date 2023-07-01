@@ -1,10 +1,8 @@
-from ErrorScan import throwError
-
 def build(filecontent):
 
     filecontent = process_string_integer(filecontent)
 
-    # Imports
+    # Impor
     filecontents = filecontent.splitlines()
     for i in filecontents:
         if("import" in i):
@@ -26,7 +24,7 @@ def build(filecontent):
     # Replace "true" with "True"
     filecontent = filecontent.replace("true", "True")
     
-    # Replace "false" with "False"
+     # Replace "false" with "False"
     filecontent = filecontent.replace("false", "False")
 
     # Replace "||" with "or"
@@ -34,6 +32,14 @@ def build(filecontent):
 
     # Replace "&&" with "and"
     filecontent = filecontent.replace("&&", "and")
+<<<<<<< HEAD
+=======
+    
+    # Replace "int" with "nothing"
+    filecontent = filecontent.replace("int ", "")
+    
+    filecontent = filecontent.replace("String ", " ")
+>>>>>>> parent of 5bb1a76 (Should work)
 
     # Convert /* ... */ comments to # comments
     if "/*" in filecontent and "*/" in filecontent:
@@ -46,6 +52,7 @@ def build(filecontent):
 
         filecontent = filecontent.replace(comment, recomment.replace("*/", ""))
 
+<<<<<<< HEAD
     # Join the lines back into a single string
     filecontent = "\n".join(processed_lines)
 
@@ -84,3 +91,7 @@ def process_string_integer(filecontent):
             processed_lines.append(line)
 
     return "\n".join(processed_lines)
+=======
+
+    return filecontent
+>>>>>>> parent of 5bb1a76 (Should work)

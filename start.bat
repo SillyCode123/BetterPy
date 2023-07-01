@@ -1,3 +1,3 @@
 @echo off
 cd test
-wt test.bat
+wt -F test.bat

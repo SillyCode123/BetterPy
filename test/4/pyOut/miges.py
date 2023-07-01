@@ -1,1 +1,2 @@
-String i = "test"
+def getName():
+    return "Miges"
