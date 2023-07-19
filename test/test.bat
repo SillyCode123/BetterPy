@@ -1,9 +1,8 @@
 @echo off
 cd ..
 ::change here to yout path (only to where your folder)
-set location =J:\Coding\Projekts\Desktop\Python\BetterPy
+set location =D:\Coding\Desktop\Python\BetterPy
 
->>>>>>> parent of 5bb1a76 (Should work)
 :: Test1
 echo Test 1 {
 py src/BetterPy.py "%location %\test\1\Main.bpy"
