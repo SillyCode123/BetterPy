@@ -32,9 +32,7 @@ def build(filecontent):
 
     # Replace "&&" with "and"
     filecontent = filecontent.replace("&&", "and")
-<<<<<<< HEAD
-=======
-    
+
     # Replace "int" with "nothing"
     filecontent = filecontent.replace("int ", "")
     
