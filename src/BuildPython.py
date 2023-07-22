@@ -1,13 +1,34 @@
+def process_string_and_integer_declarations(filecontent):
+    lines = filecontent.splitlines()
+    processed_lines = []
+    for line in lines:
+        line = line.strip()
+        if line.startswith("String"):
+            parts = line.split("=")
+            if len(parts) != 2:
+                throwError("Invalid string declaration")
+                continue
+            var_name = parts[0].strip().split(" ")[1]
+            value = parts[1].strip().strip(";")
+            if value.startswith('"') and value.endswith('"'):
+                value = value[1:-1]  # Remove surrounding quotes if present
+            processed_lines.append(f'{var_name} = "{value}"')
+        elif line.startswith("int"):
+            parts = line.split("=")
+            if len(parts) != 2:
+                throwError("Invalid integer declaration")
+                continue
+            var_name = parts[0].strip().split(" ")[1]
+            value = parts[1].strip().rstrip(";")
+            processed_lines.append(f'{var_name} = int({value})')
+        else:
+            processed_lines.append(line)
+
+    return "\n".join(processed_lines)
+
 def build(filecontent):
-
-    filecontent = process_string_integer(filecontent)
-
-    # Impor
-    filecontents = filecontent.splitlines()
-    for i in filecontents:
-        if("import" in i):
-            filecontent = filecontent.replace(i,"")
-            filecontent = i[i.find("import"):len(i)] + "\n" + filecontent
+    # Process string, integer, and boolean declarations
+    filecontent = process_string_and_integer_declarations(filecontent)
 
     # Replace semicolons with newlines
     filecontent = filecontent.replace(";", "\n")
@@ -23,8 +44,8 @@ def build(filecontent):
 
     # Replace "true" with "True"
     filecontent = filecontent.replace("true", "True")
-    
-     # Replace "false" with "False"
+
+    # Replace "false" with "False"
     filecontent = filecontent.replace("false", "False")
 
     # Replace "||" with "or"
@@ -32,13 +53,6 @@ def build(filecontent):
 
     # Replace "&&" with "and"
     filecontent = filecontent.replace("&&", "and")
-<<<<<<< HEAD
-=======
-    
-    # Replace "int" with "nothing"
-    filecontent = filecontent.replace("int ", "")
-    
-    filecontent = filecontent.replace("String ", " ")
 
     # Convert /* ... */ comments to # comments
     if "/*" in filecontent and "*/" in filecontent:
@@ -50,6 +64,5 @@ def build(filecontent):
             recomment += "#" + i.replace("/*", "")
 
         filecontent = filecontent.replace(comment, recomment.replace("*/", ""))
-
 
     return filecontent

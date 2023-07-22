@@ -1,11 +1,5 @@
 print("test");print("test");
 
-test();
-
-if(true && true){
-    cool();
-}
-
 fn test(){  
 print("test");
 }
@@ -14,6 +8,15 @@ fn cool() {
     print("cool");
 }
 
-int i = 1
+test();
+
+if(true && true){
+    cool();
+}
+
+
+int i = 1;
+String test = "test";
 
 print(i)
+print(test)
